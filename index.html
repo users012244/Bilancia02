@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bilancia a pressione</title>
+  <title>Bilancia debug pressione</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="container">
-    <h1>Bilancia a pressione</h1>
+    <h1>Bilancia (debug pressione)</h1>
 
     <section class="scale-area">
       <div class="scale">
         <div class="platform" id="platform" tabindex="0">
-          <div class="instr">Tocca qui con l'oggetto</div>
+          <div class="instr">Appoggia dito/oggetto qui</div>
+          <div class="feedback" id="feedback">Fonte pressione: —</div>
         </div>
         <div class="display" id="display">0.00 g</div>
       </div>
@@ -34,13 +35,19 @@
         </label>
         <div class="buttons">
           <button id="tare">Tara</button>
-          <button id="demo">Demo: aggiungi peso</button>
+          <button id="demo">Demo</button>
+        </div>
+
+        <div class="debug">
+          <p><strong>Fonte pressione:</strong> <span id="source">—</span></p>
+          <p><strong>Valore raw pressione:</strong> <span id="raw">—</span></p>
+          <p><strong>Valore simulato (0..1):</strong> <span id="sim">—</span></p>
         </div>
       </div>
     </section>
 
     <section class="info">
-      <p>Appoggia il dito (o l'oggetto) sulla piattaforma. Se il dispositivo fornisce pressione touch (Touch.force o PointerEvent.pressure) la misurazione usa quel valore; altrimenti viene usata la posizione verticale del tocco per simulare la pressione. Regola sensibilità e precisione.</p>
+      <p>Apri su Samsung Chrome. Se "Fonte pressione" rimane su fallback, il dispositivo non espone pressure al browser.</p>
     </section>
   </main>
 
