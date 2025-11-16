@@ -1,11 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <title>Bilancia Digitale</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bilancia virtuale</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Bilancia Digitale Web</h1>
-    <!-- Qui inserisci il codice della bilancia -->
+  <main class="container">
+    <h1>Bilancia virtuale</h1>
+
+    <section class="scale-area">
+      <div class="scale">
+        <div class="platform" id="platform">
+          <div class="object" id="object" draggable="true">Oggetto</div>
+        </div>
+        <div class="display" id="display">0.0 g</div>
+      </div>
+      <div class="controls">
+        <label>
+          Peso reale (g):
+          <input id="realWeight" type="number" step="0.1" value="2.0" />
+        </label>
+        <button id="setWeight">Imposta peso</button>
+        <button id="tare">Tara</button>
+      </div>
+    </section>
+
+    <section class="info">
+      <p>Trascina l'oggetto sulla piattaforma e clicca "Imposta peso" per assegnare il peso reale. La lettura simula una bilancia precisa con arrotondamento a 0.1 g.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
